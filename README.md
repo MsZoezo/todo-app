@@ -1,0 +1,2 @@
+# Todo App
+This is a simple todo app with authentication to learn python with [uv](https://docs.astral.sh/uv/) and [fastapi](https://fastapi.tiangolo.com/) and nextjs with [shadcn/ui](https://ui.shadcn.com/). I'm using [mise](https://mise.jdx.dev) to manage my development environment.
