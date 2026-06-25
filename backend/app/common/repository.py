@@ -7,7 +7,6 @@ from sqlmodel.sql.expression import SelectOfScalar
 from app.db.dependencies import SessionDep
 
 T = TypeVar("T", bound=SQLModel)
-S = TypeVar("S", bound=SQLModel)
 
 class BaseRepository(Generic[T]):
     def __init__(self, session: SessionDep, model: type[T]) -> None:
