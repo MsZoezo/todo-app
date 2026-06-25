@@ -1,1 +1,1 @@
-import app.users.models  # type: ignore  # noqa: F401, PGH003
+import app.modules.users.models  # type: ignore  # noqa: F401, PGH003

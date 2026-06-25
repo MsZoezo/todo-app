@@ -5,8 +5,8 @@ from fastapi import APIRouter, HTTPException
 
 from app.core.exceptions import InstanceNotFoundError, InstanceUniqueConstraintError
 
+from .dependencies import UserServiceDep
 from .schemas import PublicUserReturnSchema, UserCreateSchema
-from .services import UserServiceDep
 
 router = APIRouter(prefix="/users")
 

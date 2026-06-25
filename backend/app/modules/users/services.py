@@ -1,11 +1,8 @@
 import uuid
 from collections.abc import Sequence
-from typing import Annotated
 
-from fastapi import Depends, HTTPException
-
-from app.auth.utils import hash_password
 from app.core.exceptions import InstanceNotFoundError, InstanceUniqueConstraintError
+from app.core.security import hash_password
 from app.db.dependencies import SessionDep
 
 from .models import User
@@ -46,5 +43,3 @@ def get_user_service(session: SessionDep) -> UserService:
     user_repo = UserRepository(session, User)
 
     return UserService(user_repo)
-
-UserServiceDep = Annotated[UserService, Depends(get_user_service)]

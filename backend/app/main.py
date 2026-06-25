@@ -3,8 +3,8 @@ from contextlib import asynccontextmanager
 
 from fastapi import FastAPI
 
+from .core.api import routers
 from .db.database import init_db
-from .users.routers import router
 
 
 @asynccontextmanager
@@ -14,7 +14,8 @@ async def lifespan(app: FastAPI) -> AsyncGenerator[None]:  # noqa: ARG001
 
 app = FastAPI(lifespan=lifespan)
 
-app.include_router(router=router)
+for router in routers:
+    app.include_router(router)
 
 @app.get("/")
 async def root() -> dict[str, str]:
