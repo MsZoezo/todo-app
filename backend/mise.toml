@@ -1,0 +1,14 @@
+[tools]
+ruff = "latest"
+uv = "latest"
+
+[settings]
+python.uv_venv_auto = "source"
+
+[tasks.lint]
+description = "Lint code using ruff"
+run = "ruff check --fix ."
+
+[tasks.develop]
+description = "Start development server"
+run = "uv run fastapi dev"
